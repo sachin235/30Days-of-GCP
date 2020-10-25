@@ -49,7 +49,7 @@ gcloud deployment-manager deployments create griffin-prod --config prod-network.
 
 - Go back to the Cloud Console, navigate to Deployment Manager to confirm the deployment.
 
-# ![img3a](img3a.png)
+# ![img3a](/Assets/img3a.png)
 
 ## Task 3: Create bastion host
 
@@ -164,7 +164,7 @@ Node subnet: griffin-dev-wp
 
 - Click CREATE
 
-# ![img3b](img3b.png)
+# ![img3b](/Assets/img3b.png)
 
 ## Task 6: Prepare the Kubernetes cluster
 
@@ -216,7 +216,7 @@ edit wp-deployment.yaml
 
 - Replace `YOUR_SQL_INSTANCE` with `griffin-dev-db` Instance connection name.
 
-# ![img3c](img3c.png)
+# ![img3c](/Assets/img3c.png)
 
 - Save the file change.
 - Go back to the Cloud Shell, run the following commands:
@@ -232,7 +232,7 @@ kubectl create -f wp-service.yaml
 kubectl get service wordpress
 ```
 
-# ![img3d](img3d.png)
+# ![img3d](/Assets/img3d.png)
 
 ## Task 8: Enable monitoring
 
@@ -252,7 +252,7 @@ Path:           /
 To know the "YOUR-WORDPRESS_ENDPOINT", GO TO Load Balancer, and find the Ip address, and then through new tab, open the ip address and get the end point of it. Then that url should be the end point. Copy it and go ahead.
 ```
 
-# ![img3e](img3e.png)
+# ![img3e](/Assets/img3e.png)
 
 ## Task 9: Provide access for an additional engineer
 
