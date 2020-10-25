@@ -31,7 +31,7 @@ Runtime:   Node.js 10
 Function to execute (Entry Point): thumbnail
 ```
 
-# ![img2](img2.png)
+# ![img2](/Assets/img2.png)
 
 - Copy the given index.js and package.json to the dialog.
 - Make sure you replace the text REPLACE_WITH_YOUR_TOPIC in line 15 of index.js with the topic you created in task 2.
