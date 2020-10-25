@@ -261,3 +261,5 @@ To know the "YOUR-WORDPRESS_ENDPOINT", GO TO Load Balancer, and find the Ip addr
 - In the Add members to … pane, copy and paste the second user account for the lab to the New members field.
 - In the Role dropdown, select Project > Editor.
 - Click SAVE.
+
+### End the lab once you get the score 100/100 :)
