@@ -214,3 +214,7 @@ git push origin master
 ```
 
 - Finally, manually trigger the build in the Jenkins console
+
+Video for reference:
+
+https://www.youtube.com/watch?v=AJna2uyI9hw
