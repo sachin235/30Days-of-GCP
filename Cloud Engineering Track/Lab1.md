@@ -4,7 +4,7 @@
 
 Navigation menu > Compute engine > VM Instance
 
-# ![img1](/Assets/img1.png)
+# ![img1](./Assets/img1.png)
 
 ## Task 2: Create a Kubernetes service cluster
 
