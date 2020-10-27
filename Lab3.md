@@ -226,7 +226,8 @@ kubectl create -f wp-deployment.yaml
 kubectl create -f wp-service.yaml
 ```
 
-- Copy the External endpoints of the deployed wordpress service and open it in your browser.
+- Copy the External IP of the deployed wordpress service and open it in your browser.
+Sometimes browser may show up some error in that case use the given ports along side the external IP.
 
 ```
 kubectl get service wordpress
@@ -244,12 +245,12 @@ kubectl get service wordpress
 
 ```
 Title:          WordPress Uptime
-Check Type:     HTTP
+Check Type:     TCP
 Resource Type:  URL
-Hostname:       YOUR-WORDPRESS_ENDPOINT
+Hostname:       External IP 
 Path:           /
 
-To know the "YOUR-WORDPRESS_ENDPOINT", GO TO Load Balancer, and find the Ip address, and then through new tab, open the ip address and get the end point of it. Then that url should be the end point. Copy it and go ahead.
+External IP will the same you copied in task 7. 
 ```
 
 # ![img3e](/Assets/img3e.png)
