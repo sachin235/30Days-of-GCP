@@ -76,13 +76,15 @@ Create firewall rule to allow HTTP traffic to `juice-shop`.
 
 Configure the following settings:
 
+```
 Field and Value
-Name -- e.g. `allow-http-ingress`
-Direction of traffic -- Ingress
-Targets -- Specified target tags
-Target tags -- `juice-shop`
-Source IP ranges -- 0.0.0.0/0
-Protocols and ports -- Select **TCP**, enter 80 to allow HTTP.
+Name:                   e.g. `allow-http-ingress`
+Direction of traffic:   Ingress
+Targets:                Specified target tags
+Target tags:            `juice-shop`
+Source IP ranges:       0.0.0.0/0
+Protocols and ports:    Select **TCP**, enter 80 to allow HTTP.
+```
 
 # ![img5b](./Assets/img5b.png)
 
@@ -111,13 +113,15 @@ Enter the following command line in the Google Cloud Shell.
 
 Configure the following settings:
 
+```
 Field and Value
-Name -- e.g. `allow-ssh-from-mgmt-subnet`
-Direction of traffic -- Ingress
-Targets -- Specified target tags
-Target tags -- `bastion` and `juice-shop`
-Source IP ranges -- IP address range of your `aceme-mgmt-subnet`
-Protocols and ports -- Select **TCP** and enter 22 to allow SSH.
+Name:                   e.g. `allow-ssh-from-mgmt-subnet`
+Direction of traffic:   Ingress
+Targets:                Specified target tags
+Target tags:            `bastion` and `juice-shop`
+Source IP ranges:       IP address range of your `aceme-mgmt-subnet`
+Protocols and ports:    Select **TCP** and enter 22 to allow SSH.
+```
 
 # ![img5c](./Assets/img5c.png)
 
