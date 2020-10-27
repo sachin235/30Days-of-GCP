@@ -9,7 +9,7 @@
 - Search covid19_open_data and then select COVID-19 Open Data
 - Use Filter to locate the table covid19_open_data under the covid19_open_data dataset.
 
-# ![BigQuery](/Assets/BigQuery.jpg)
+# ![BigQuery](./Assets/BigQuery.jpg)
 
 ## Query 1: Total Confirmed Cases
 
