@@ -3,7 +3,7 @@
 ## Task 1: Create Production Environment
 
 - In the Google Cloud Console, navigate to Compute Engine > VM Instances
-- SSH into the kraken-umphost VM and run the following commands:
+- SSH into the kraken-jumphost VM and run the following commands:
 
 ```
 cd /work/dm
@@ -38,10 +38,11 @@ gcloud config set compute/zone us-east1-b
 gcloud compute instances create kraken-admin --network-interface="subnet=kraken-mgmt-subnet" --network-interface="subnet=kraken-prod-subnet"
 ```
 
-- Create alert:
-- Open monitoring
+Create an alert:
 
-- Create an alert
+- In the Google Cloud Console, navigate to Monitoring > Alerting
+
+- Click on Create policy
 
 - Configure the policy to email your email when jumphost is cpu utilization is above 50% for 1 min.
 
@@ -73,7 +74,9 @@ gcloud source repos clone sample-app
 cd sample-app
 
 touch a
+```
 
+```
 git config --global user.email "$(gcloud config get-value account)"
 
 git config --global user.name "Student"
@@ -88,3 +91,5 @@ git push --tags
 Video for reference:
 
 https://www.youtube.com/watch?v=ttg5kOfUg7s
+
+### End the lab once you get the score 100/100 :)
