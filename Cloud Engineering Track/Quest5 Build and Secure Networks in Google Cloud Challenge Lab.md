@@ -46,13 +46,15 @@ Enter the following command line in the Google Cloud Shell.
 
 Configure the following settings:
 
+```
 Field and Value
-Name -- e.g. `allow-ssh-from-iap`
-Direction of traffic -- Ingress
-Target -- Specified target tags
-Target tags -- `bastion`
-Source IP ranges -- 35.235.240.0/20
-Protocols and ports -- Select **TCP**, enter 22 to allow SSH.
+Name:                   allow-ssh-from-iap
+Direction of traffic:   Ingress
+Target:                 Specified target tags
+Target tags:            bastion
+Source IP ranges:       35.235.240.0/20
+Protocols and ports:    Select TCP, enter 22 to allow SSH.
+```
 
 # ![img5a](./Assets/img5a.png)
 
