@@ -3,7 +3,7 @@
 ## Task 1: Create Production Environment
 
 - In the Google Cloud Console, navigate to Compute Engine > VM Instances
-- SSH into the kraken-umphost VM and run the following commands:
+- SSH into the kraken-jumphost VM and run the following commands:
 
 ```
 cd /work/dm
