@@ -49,7 +49,7 @@ gcloud deployment-manager deployments create griffin-prod --config prod-network.
 
 - Go back to the Cloud Console, navigate to Deployment Manager to confirm the deployment.
 
-# ![img3a](/Assets/img3a.png)
+# ![img3a](./Assets/img3a.png)
 
 ## Task 3: Create bastion host
 
@@ -164,7 +164,7 @@ Node subnet: griffin-dev-wp
 
 - Click CREATE
 
-# ![img3b](/Assets/img3b.png)
+# ![img3b](./Assets/img3b.png)
 
 ## Task 6: Prepare the Kubernetes cluster
 
@@ -216,7 +216,7 @@ edit wp-deployment.yaml
 
 - Replace `YOUR_SQL_INSTANCE` with `griffin-dev-db` Instance connection name.
 
-# ![img3c](/Assets/img3c.png)
+# ![img3c](./Assets/img3c.png)
 
 - Save the file change.
 - Go back to the Cloud Shell, run the following commands:
@@ -227,13 +227,13 @@ kubectl create -f wp-service.yaml
 ```
 
 - Copy the External IP of the deployed wordpress service and open it in your browser.
-Sometimes browser may show up some error in that case use the given ports along side the external IP.
+  Sometimes browser may show up some error in that case use the given ports along side the external IP.
 
 ```
 kubectl get service wordpress
 ```
 
-# ![img3d](/Assets/img3d.png)
+# ![img3d](./Assets/img3d.png)
 
 ## Task 8: Enable monitoring
 
@@ -247,13 +247,13 @@ kubectl get service wordpress
 Title:          WordPress Uptime
 Check Type:     TCP
 Resource Type:  URL
-Hostname:       External IP 
+Hostname:       External IP
 Path:           /
 
-External IP will the same you copied in task 7. 
+External IP will the same you copied in task 7.
 ```
 
-# ![img3e](/Assets/img3e.png)
+# ![img3e](./Assets/img3e.png)
 
 ## Task 9: Provide access for an additional engineer
 
