@@ -3,6 +3,7 @@
 ## Setup Required:
 
 #### Open Public Dataset:
+
 - In the Cloud Console, navigate to Menu > BigQuery.
 - Click + ADD DATA > Explore public datasets from the left pane.
 - Search covid19_open_data and then select COVID-19 Open Data
@@ -20,6 +21,7 @@ FROM
 WHERE
   date = "2020-04-15"
 ```
+
 ## Query 2: Worst Affected Areas
 
 ```
@@ -40,16 +42,18 @@ GROUP BY
 )
 WHERE death_count > 100
 ```
+
 ## Query 3: Identifying Hotspots
 
 ```
-SELECT subregion1_name as state, sum(cumulative_confirmed) as total_confirmed_cases 
-FROM `bigquery-public-data.covid19_open_data.covid19_open_data` 
+SELECT subregion1_name as state, sum(cumulative_confirmed) as total_confirmed_cases
+FROM `bigquery-public-data.covid19_open_data.covid19_open_data`
 where country_name="United States of America" and date='2020-04-10' and subregion1_name is NOT NULL
 group by subregion1_name
 having total_confirmed_cases > 1000
 order by total_confirmed_cases desc
 ```
+
 ## Query 4: Fatality Ratio
 
 ```
@@ -57,15 +61,17 @@ SELECT SUM(cumulative_confirmed) AS total_confirmed_cases, SUM(cumulative_deceas
 FROM `bigquery-public-data.covid19_open_data.covid19_open_data`
 WHERE country_name="Italy" AND date BETWEEN "2020-04-01" AND "2020-04-30"
 ```
+
 ## Query 5: Identifying specific day
 
 ```
 SELECT date
-FROM `bigquery-public-data.covid19_open_data.covid19_open_data` 
+FROM `bigquery-public-data.covid19_open_data.covid19_open_data`
 where country_name="Italy" and cumulative_deceased>10000
 order by date asc
 limit 1
 ```
+
 ## Query 6: Finding days with zero net new cases
 
 ```
@@ -99,6 +105,7 @@ FROM
 WHERE
   net_new_cases = 0
 ```
+
 ## Query 7: Doubling rate
 
 ```
@@ -136,6 +143,7 @@ FROM
 WHERE
   percentage_increase > 10
 ```
+
 ## Query 8: Recovery rate
 
 ```
@@ -168,6 +176,7 @@ WHERE
 ORDER BY recovery_rate DESC
 LIMIT 10
 ```
+
 ## Query 9: CDGR - Cumulative Daily Growth Rate
 
 ```
@@ -196,12 +205,14 @@ FROM
 LIMIT 1
 )
 
-select first_day_cases, last_day_cases, days_diff, POWER(last_day_cases/first_day_cases,1/days_diff)-1 as cdgr
+select first_day_cases, last_day_cases, days_diff, POW((last_day_cases/first_day_cases),(1/days_diff))-1 as cdgr
 from summary
 ```
+
 ## Create a Datastudio report
 
 - Enter the following code in the BigQuery editor and Run:
+
 ```
 SELECT
   date, SUM(cumulative_confirmed) AS country_cases,
@@ -214,6 +225,7 @@ WHERE
   AND country_name ="United States of America"
 GROUP BY date
 ```
+
 - Click On EXPLORE DATA > Explore with Data Studio.
 - Authorize your BigQuery in Data Studio
 - You may fail to create a report for the first-time logon of Data Studio. Click + Blank Report and accept the Terms of Service. Go back to the BigQuery page and click Explore with Data Studio again.
