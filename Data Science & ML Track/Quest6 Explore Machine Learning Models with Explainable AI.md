@@ -31,24 +31,26 @@ git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 ## Build and train your models
 
 1.  In the second cell of the  **Train your first model on the complete dataset**  section, add the following lines to create the model.
+
 ```
-    model = Sequential()
-    model.add(layers.Dense(8, input_dim=input_size))
-    model.add(layers.Dense(1, activation='sigmoid'))
-    model.compile(optimizer='sgd', loss='mse')
-    model.fit(train_data, train_labels, batch_size=32, epochs=10)
+model = Sequential()
+model.add(layers.Dense(8, input_dim=input_size))
+model.add(layers.Dense(1, activation='sigmoid'))
+model.compile(optimizer='sgd', loss='mse')
+model.fit(train_data, train_labels, batch_size=32, epochs=10)
 ```
 
    # ![img6d](./Assets/img6d.png) 
 
 
 2.  Copy the code for training the second model. Modify  `model`  to  `limited_model`  as well as  `train_data, train_labels`  to  `limited_train_data, limited_train_labels`. The code for the second model should look like the following.
+
 ```
-    limited_model = Sequential()
-    limited_model.add(layers.Dense(8, input_dim=input_size))
-    limited_model.add(layers.Dense(1, activation='sigmoid'))
-    limited_model.compile(optimizer='sgd', loss='mse')
-    limited_model.fit(limited_train_data, limited_train_labels, batch_size=32, epochs=10)  
+limited_model = Sequential()
+limited_model.add(layers.Dense(8, input_dim=input_size))
+limited_model.add(layers.Dense(1, activation='sigmoid'))
+limited_model.compile(optimizer='sgd', loss='mse')
+limited_model.fit(limited_train_data, limited_train_labels, batch_size=32, epochs=10)  
 ```
 
 3.  Run the cells in this section and wait for the finish of model training.
@@ -58,9 +60,10 @@ git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 
 Moving on to the  **Deploy your models to the AI Platform**  section in the notebook.
 
-1.  Replace the values of  `GCP_PROJECT`  and  `MODEL_BUCKET`  with your project ID and an unique bucket name.
-2.  Change the  `REGION`  to  `us-west1`.
-3.  Run those three cells and then confirm the created bucket and the uploaded model files in the Cloud Storage.
+1.  Navigate to Storage and create a bucket with unique bucket name. 
+2.  Replace the values of  `GCP_PROJECT`  and  `MODEL_BUCKET`  with your project ID and the bucket name.
+3.  Change the  `REGION`  to  `us-west1`.
+4.  Run those three cells and then confirm the created bucket and the uploaded model files in the Cloud Storage.
 
 # ![img6e](./Assets/img6e.png)
 
@@ -68,19 +71,20 @@ Moving on to the  **Deploy your models to the AI Platform**  section in the note
 ### Create your first AI Platform model: complete_model
 
 4.  Add the following codes to the notebook cells for your COMPLETE model.
+
 ```
-    !gcloud ai-platform models create $MODEL_NAME --regions $REGION  
+!gcloud ai-platform models create $MODEL_NAME --regions $REGION  
 ```
 
 ```
-    !gcloud ai-platform versions create $VERSION_NAME \
-    --model=$MODEL_NAME \
-    --framework='TensorFlow' \
-    --runtime-version=2.1 \
-    --origin=$MODEL_BUCKET/saved_model/my_model \
-    --staging-bucket=$MODEL_BUCKET \
-    --python-version=3.7 \
-    --project=$GCP_PROJECT
+!gcloud ai-platform versions create $VERSION_NAME \
+--model=$MODEL_NAME \
+--framework='TensorFlow' \
+--runtime-version=2.1 \
+--origin=$MODEL_BUCKET/saved_model/my_model \
+--staging-bucket=$MODEL_BUCKET \
+--python-version=3.7 \
+--project=$GCP_PROJECT
 ```
 
 # ![img6f](./Assets/img6f.png)
@@ -92,21 +96,21 @@ Created your first AI Platform model: complete_model
 
 
 5.  Add the following codes to the notebook cells for your LIMITED model.
+
 ```
 !gcloud ai-platform models create $LIM_MODEL_NAME --regions $REGION
 ```
     
-    ```
-    !gcloud ai-platform versions create $VERSION_NAME \
-    --model=$LIM_MODEL_NAME \
-    --framework='TensorFlow' \
-    --runtime-version=2.1 \
-    --origin=$MODEL_BUCKET/saved_limited_model/my_limited_model \
-    --staging-bucket=$MODEL_BUCKET \
-    --python-version=3.7 \
-    --project=$GCP_PROJECT
-    
-    ```
+```
+!gcloud ai-platform versions create $VERSION_NAME \
+--model=$LIM_MODEL_NAME \
+--framework='TensorFlow' \
+--runtime-version=2.1 \
+--origin=$MODEL_BUCKET/saved_limited_model/my_limited_model \
+--staging-bucket=$MODEL_BUCKET \
+--python-version=3.7 \
+--project=$GCP_PROJECT
+```
     
     **Remark**: The gcloud ai-platform command group should be  `versions`  rather than  `version`.
 
