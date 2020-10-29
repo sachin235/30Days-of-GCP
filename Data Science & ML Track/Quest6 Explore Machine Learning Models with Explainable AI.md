@@ -112,7 +112,7 @@ Created your first AI Platform model: complete_model
 --project=$GCP_PROJECT
 ```
     
-    **Remark**: The gcloud ai-platform command group should be  `versions`  rather than  `version`.
+**Remark:** The gcloud ai-platform command group should be  `versions`  rather than  `version`.
 
 # ![img6g](./Assets/img6g.png)
 
