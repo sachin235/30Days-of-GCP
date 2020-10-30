@@ -86,11 +86,43 @@ hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt
 - Click CREATE.
 
 
+## Task 3: Run a simple Dataprep job
+
+### Import runs.csv to Dataprep
+- In the Cloud Console, click on Navigation menu > Dataprep.
+- After entering the home page of Cloud Dataprep, click the "Import Data" button.
+- In the Import Data page, select "GCS" in the left pane.
+- Click on the pencil icon under Choose a file or folder.
+- Copy ```gs://cloud-training/gsp323/runs.csv``` to the textbox, and click the Go button next to it.
+- After showing the preview of runs.csv in the right pane, click on the Import & Wrangle button.
+
+### Transform data in Dataprep
+- After launching the Dataperop Transformer, scroll right to the end and select column10.
+- In the Details pane, click FAILURE under Unique Values to show context menu.
+- Select "Delete rows with selected values" to Remove all rows with the state of “FAILURE”.
+
+- Click the downward arrow next to column9, choose Filter rows > On column value > Contains.
+- In the Filter rows pane, enter the regex pattern ```/(^0$|^0\.0$)/``` to “Pattern to match”.
+- Select Delete matching rows under the Action section, then click the "Add" button.
+
+- Rename the columns to be:
+```
+    runid
+    userid
+    labid
+    lab_title
+    start
+    end
+    time
+    score
+    state
+```
+
+- Click "Run Job".
 
 
+## Task 4: AI
 
-=====================
 
-# ![img2b](./Assets/img2b.webp)
 
 
