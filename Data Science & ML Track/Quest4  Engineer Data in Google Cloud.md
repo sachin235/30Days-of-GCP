@@ -124,6 +124,9 @@ FROM
 ```
 
 At the end of the lab, your BigQuery dataset should contains the following tables.
+
 # ![img4d](./Assets/img4d.png)
+
 Click **Check My Progress**.
+
 ### End the lab once you get the score 100/100 :)
