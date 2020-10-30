@@ -34,9 +34,9 @@ export GOOGLE_APPLICATION_CREDENTIALS=key.json
 gsutil cp gs://$PROJECT/analyze-images.py .
 ```
 
-- Open the Cloud Shell Editor to review and edit the script file:
+- Open the Cloud Shell Editor to review and edit the script file.
 
-- You need to add your codes to the following part of the script file.
+- You need to add your codes to the following part of the script file:
 
 TBD: Create a Vision API image object called image_object
 
@@ -60,7 +60,7 @@ Ref: google.cloud.vision_v1.ImageAnnotatorClient.document_text_detection
 
 ## Task 4: Modify the Python script to translate the text using the Translation API
 
-- In Task 4, you need to add your codes to the following part of the script file:
+- You need to add your codes to the following part of the script file:
 
 TBD: For non EN locales pass the description data to the translation API
 
