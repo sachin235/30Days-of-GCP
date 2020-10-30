@@ -43,23 +43,54 @@
 ```
 JavaScript UDF path in Cloud Storage:       gs://cloud-training/gsp323/lab.js
 
-JSON path:              gs://cloud-training/gsp323/lab.schema
+JSON path:                                  gs://cloud-training/gsp323/lab.schema
 
-JavaScript UDF name:            transform
+JavaScript UDF name:                        transform
 
-BigQuery output table:          YOUR_PROJECT:lab.customers
+BigQuery output table:                      YOUR_PROJECT:lab.customers
 
-Cloud Storage input path:           gs://cloud-training/gsp323/lab.csv
+Cloud Storage input path:                   gs://cloud-training/gsp323/lab.csv
 
-Temporary BigQuery directory:       gs://YOUR_PROJECT/bigquery_temp
+Temporary BigQuery directory:               gs://YOUR_PROJECT/bigquery_temp
 
-Temporary location:                 gs://YOUR_PROJECT/temp
+Temporary location:                         gs://YOUR_PROJECT/temp
 ```
 
 Replace ```YOUR_PROJECT``` with your project ID.
 
 - Click RUN JOB.
 
+
+## Task 2: Run a simple Dataproc job
+
+### Create a Dataproc cluster
+- In the Cloud Console, click on Navigation Menu > Dataproc > Clusters.
+- Click CREATE CLUSTER.
+- Make sure the cluster is going to create in the region us-central1.
+- Click Create.
+- After the cluster has been created, clik the SSH button in the row of the master instance.
+
+# ![img2c](./Assets/img2c.webp)
+
+- In the SSH console, run the following command:
+```
+hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt
+```
+
+- Close the SSH window and go back to the Cloud Console.
+- Click SUBMIT JOB in the cluster details page.
+- Select Spark from the dropdown of “Job type”.
+- Copy ```org.apache.spark.examples.SparkPageRank``` to “Main class or jar”.
+- Copy ```file:///usr/lib/spark/examples/jars/spark-examples.jar``` to “Jar files”.
+- Enter ```/data.txt``` to “Arguments”.
+- Click CREATE.
+
+
+
+
+
 =====================
 
 # ![img2b](./Assets/img2b.webp)
+
+
