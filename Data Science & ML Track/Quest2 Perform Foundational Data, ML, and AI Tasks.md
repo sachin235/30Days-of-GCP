@@ -124,7 +124,7 @@ hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt
 ## Task 4: AI
 **(Perform any one of the three subtasks below)**
 
-## Use Google Cloud Speech API to analyze the audio file
+## (i) Use Google Cloud Speech API to analyze the audio file
 - In the Cloud Console, click on Navigation menu > APIs & Services > Credentials.
 -In the Credentials page, click on + CREATE CREDENTIALS > API key.
 - Copy the API key to clipboard, then click RESTRICT KEY.
@@ -160,7 +160,7 @@ gsutil cp task4-gcs.result gs://<YOUR-PROJECT_ID>-marking/task4-gcs.result
 ```
 
 
-## Use the Cloud Natural Language API to analyze the sentence
+## (ii) Use the Cloud Natural Language API to analyze the sentence
 
 ```
 gcloud iam service-accounts create my-natlang-sa \
@@ -194,7 +194,7 @@ gsutil cp result.json gs://<YOUR_PROJECT_ID>-marking/task4-cnl.result
 ```
 
 
-## Use Google Video Intelligence and detect all text on the video
+## (iii) Use Google Video Intelligence and detect all text on the video
 
 ```
 gcloud iam service-accounts create quickstart
@@ -239,3 +239,5 @@ curl -s -H 'Content-Type: application/json' -H "Authorization: Bearer $ACCESS_TO
 ```
 gsutil cp result1.json gs://<YOUR_PROJECT_ID>-marking/task4-gvi.result
 ```
+
+### End the lab once you get the score 100/100 :)
