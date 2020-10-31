@@ -11,6 +11,7 @@
     <li><a href="https://google.qwiklabs.com/quests/116">Deploy to Kubernetes in Google Cloud</a></li>
   </ol></li>
   <li>DATA SCIENCE AND MACHINE LEARNING
+    <ol type="a'>
     <li><a href="https://google.qwiklabs.com/quests/120">Getting Started: Create and Manage Cloud Resources</a></li>
     <li><a href="https://google.qwiklabs.com/quests/117">"Perform Foundational Data, ML, and AI Tasks in Google Cloud</a></li>
     <li><a href="https://google.qwiklabs.com/quests/123">Insights from Data with BigQuery</a></li>
