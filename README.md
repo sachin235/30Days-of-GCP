@@ -21,5 +21,5 @@
   </ol></li>
   </ol>
     
- <a href="https://gist.github.com/koolgokul22/1f7a3e2b86978282b52223ad5bf149a9"><h3>GCP Cheat</h3>Sheet</a>
+ <a href="https://gist.github.com/koolgokul22/1f7a3e2b86978282b52223ad5bf149a9"><h3>GCP Cheat Sheet</h3></a>
   
