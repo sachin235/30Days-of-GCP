@@ -1,2 +1,2 @@
 # 30Days-of-GCP
-##Resources for the 30 Days of GCP program
+<h3>Resources for the 30 Days of GCP program</h3>
