@@ -17,7 +17,7 @@
     <li><a href="https://google.qwiklabs.com/quests/123">Insights from Data with BigQuery</a></li>
     <li><a href="https://google.qwiklabs.com/quests/132">Engineer Data in Google Cloud</a></li>
     <li><a href="https://google.qwiklabs.com/quests/136">Integrate with Machine Learning APIs</a></li>
-    <li><a href="https://google.qwiklabs.com/quests/120">Explore Machine Learning Models with Explainable AI</a></li>
+    <li><a href="https://google.qwiklabs.com/quests/126">Explore Machine Learning Models with Explainable AI</a></li>
   </ol></li>
   </ol>
     
