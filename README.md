@@ -13,7 +13,7 @@
   <li>DATA SCIENCE AND MACHINE LEARNING
     <ol type="a">
     <li><a href="https://google.qwiklabs.com/quests/120">Getting Started: Create and Manage Cloud Resources</a></li>
-    <li><a href="https://google.qwiklabs.com/quests/117">"Perform Foundational Data, ML, and AI Tasks in Google Cloud</a></li>
+    <li><a href="https://google.qwiklabs.com/quests/117">Perform Foundational Data, ML and AI Tasks in Google Cloud</a></li>
     <li><a href="https://google.qwiklabs.com/quests/123">Insights from Data with BigQuery</a></li>
     <li><a href="https://google.qwiklabs.com/quests/132">Engineer Data in Google Cloud</a></li>
     <li><a href="https://google.qwiklabs.com/quests/136">Integrate with Machine Learning APIs</a></li>
