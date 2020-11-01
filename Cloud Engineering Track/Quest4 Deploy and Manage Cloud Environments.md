@@ -44,6 +44,8 @@ Create an alert:
 
 - Click on Create policy
 
+- Click on Filter and add project_id and the instance_id of the instance kraken-admin to it
+
 - Configure the policy to email your email when jumphost is cpu utilization is above 50% for 1 min.
 
 ## Task 3: Verify the Spinnaker deployment
