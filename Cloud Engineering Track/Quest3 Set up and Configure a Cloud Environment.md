@@ -248,7 +248,7 @@ Title:          WordPress Uptime
 Check Type:     TCP
 Resource Type:  URL
 Hostname:       External IP
-Path:           /
+Port:           80
 
 External IP will the same you copied in task 7.
 ```
