@@ -15,6 +15,8 @@ gcloud config set project [VALUE ( GCP Project ID )]
 
 gcloud config set compute/zone us-east1-b
 
+gcloud auth login
+
 gcloud container clusters create nucleus-jumphost-webserver1
 
 gcloud container clusters get-credentials nucleus-jumphost-webserver1
