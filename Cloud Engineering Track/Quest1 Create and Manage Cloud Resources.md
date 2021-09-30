@@ -51,7 +51,7 @@ gcloud compute instance-templates create nginx-template \
 
 ```
 gcloud compute target-pools create nginx-pool
-(Select n and choose option 19)
+(Select n and choose option with value us-east1[number 23 in my case])
 ```
 
 3. Create a managed instance group :
