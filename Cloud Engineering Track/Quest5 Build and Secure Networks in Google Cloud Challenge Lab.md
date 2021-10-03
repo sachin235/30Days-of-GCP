@@ -50,6 +50,7 @@ Configure the following settings:
 Field and Value
 Name:                   allow-ssh-from-iap
 Direction of traffic:   Ingress
+Network-type            acme-vpc
 Target:                 Specified target tags
 Target tags:            bastion
 Source IP ranges:       35.235.240.0/20
@@ -80,6 +81,7 @@ Configure the following settings:
 Field and Value
 Name:                   allow-http-ingress
 Direction of traffic:   Ingress
+Network-type            acme-vpc
 Targets:                Specified target tags
 Target tags:            juice-shop
 Source IP ranges:       0.0.0.0/0
@@ -117,6 +119,7 @@ Configure the following settings:
 Field and Value
 Name:                   allow-ssh-from-mgmt-subnet
 Direction of traffic:   Ingress
+Network-type            acme-vpc
 Targets:                Specified target tags
 Target tags:            `bastion` and `juice-shop`
 Source IP ranges:       IP address range of your `aceme-mgmt-subnet`
@@ -144,5 +147,6 @@ After configuring the firewall rules, try to verify the environment via the bast
 - Click on the **SSH** button in the row of the bastion instance.
 - In the **SSH** console, access the `juice-shop` from the bastion using the following command:
   `ssh < internal-IP-of-juice-shop >`
+- press yes
 
 **_(Remember to REPLACE < internal-IP-of-juice-shop > with the copied IP address)_**
