@@ -30,9 +30,8 @@ for F in $(ls *.yaml); do kubectl create -f $F; done
 
 ## Task 2: Configure the admin host
 
-```
 Create kraken-admin
-
+```
 gcloud config set compute/zone us-east1-b
 
 gcloud compute instances create kraken-admin --network-interface="subnet=kraken-mgmt-subnet" --network-interface="subnet=kraken-prod-subnet"
