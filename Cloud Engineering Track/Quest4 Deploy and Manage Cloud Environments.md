@@ -83,6 +83,8 @@ git config --global user.email "$(gcloud config get-value account)"
 
 git config --global user.name "Student"
 
+git add .
+
 git commit -a -m "change"
 
 git tag v1.0.1
