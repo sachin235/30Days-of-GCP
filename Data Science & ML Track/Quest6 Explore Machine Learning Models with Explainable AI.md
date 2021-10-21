@@ -4,7 +4,7 @@
 -  In the Cloud Console, in the Search bar, type in  **Notebook**.
 -  Select  **Notebook**  for  **AI Platform**.
 -  On the Notebook instances page, click  **New Instance**.
--   In the Customize instance menu, select the latest version of  TensorFlow and then select **_without_  GPUs**.
+-   In the Customize instance menu, select the 2.3 version of TensorFlow and then select **_without_  GPUs**.
 -  In the  **New notebook instance**  dialog, accept the default options and click  **Create**.
 
 # ![img6a](./Assets/img6a.png)
@@ -34,11 +34,32 @@ git clone https://github.com/GoogleCloudPlatform/training-data-analyst
 
 ```
 model = Sequential()
-model.add(layers.Dense(8, input_dim=input_size))
+model.add(layers.Dense(200, input_shape=(input_size,), activation='relu'))
+model.add(layers.Dense(50, activation='relu'))
+model.add(layers.Dense(20, activation='relu'))
 model.add(layers.Dense(1, activation='sigmoid'))
-model.compile(optimizer='sgd', loss='mse')
-model.fit(train_data, train_labels, batch_size=32, epochs=10)
+model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
+model.fit(train_data, train_labels, epochs=10, batch_size=2048, validation_split=0.1)
 ```
+
+1.a. change dir name and save place  
+- replace this
+
+```
+# Save your model
+!mkdir -p saved_complete_model
+model.save('saved_complete_model') 
+```
+
+- with this
+
+```
+# Save your model
+!mkdir -p saved_model
+model.save('saved_model/my_model')
+
+```
+ 
 
    # ![img6d](./Assets/img6d.png) 
 
@@ -46,11 +67,30 @@ model.fit(train_data, train_labels, batch_size=32, epochs=10)
 2.  Copy the code for training the second model. Modify  `model`  to  `limited_model`  as well as  `train_data, train_labels`  to  `limited_train_data, limited_train_labels`. The code for the second model should look like the following.
 
 ```
+
 limited_model = Sequential()
-limited_model.add(layers.Dense(8, input_dim=input_size))
+limited_model.add(layers.Dense(200, input_shape=(input_size,), activation='relu'))
+limited_model.add(layers.Dense(50, activation='relu'))
+limited_model.add(layers.Dense(20, activation='relu'))
 limited_model.add(layers.Dense(1, activation='sigmoid'))
-limited_model.compile(optimizer='sgd', loss='mse')
-limited_model.fit(limited_train_data, limited_train_labels, batch_size=32, epochs=10)  
+limited_model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
+limited_model.fit(limited_train_data, limited_train_labels, epochs=10, batch_size=2048, validation_split=0.1)
+```
+2.a. change the file name
+- replace this
+
+```
+# Save your model
+!mkdir -p saved_limited_model
+limited_model.save('saved_limited_model') 
+```
+
+- with this
+
+```
+# Save your model
+!mkdir -p saved_limited_model
+limited_model.save('saved_limited_model/my_limited_model') 
 ```
 
 3.  Run the cells in this section and wait for the finish of model training.
@@ -60,13 +100,33 @@ limited_model.fit(limited_train_data, limited_train_labels, batch_size=32, epoch
 
 Moving on to the  **Deploy your models to the AI Platform**  section in the notebook.
 
-1.  Navigate to Storage and create a bucket with unique bucket name. 
-2.  Replace the values of  `GCP_PROJECT`  and  `MODEL_BUCKET`  with your project ID and the bucket name.
-3.  Change the  `REGION`  to  `us-west1`.
+1.  Navigate to Storage and create a bucket with unique bucket name(use GCP Project ID). 
+2.  Replace the values of `GCP_PROJECT` and `MODEL_BUCKET` with your project ID and the bucket name(Project ID: qs://<PROJECT_ID>) respectively.
+3.  change `MODEL_NAME` AND `LIM_MODEL_NAME` to `complete_model` and `limited_model` respectively.
 4.  Run those three cells and then confirm the created bucket and the uploaded model files in the Cloud Storage.
+5. Like this
+```
 
-# ![img6e](./Assets/img6e.png)
+GCP_PROJECT = 'PROJECT_ID'
+MODEL_BUCKET = 'gs://PROJECT_ID'
+MODEL_NAME = 'complete_model' #do not modify
+LIM_MODEL_NAME = 'limited_model' #do not modify
+VERSION_NAME = 'v1'
+REGION = 'us-central1'
+```
 
+4. Modify lines 
+- replace this
+```
+!gsutil cp -r ./saved_complete_model $MODEL_BUCKET
+!gsutil cp -r ./limited_model $MODEL_BUCKET
+
+```
+- with this
+```
+!gsutil cp -r ./saved_model $MODEL_BUCKET
+!gsutil cp -r ./saved_limited_model $MODEL_BUCKET
+```
 
 ### Create your first AI Platform model: complete_model
 
@@ -79,15 +139,13 @@ Moving on to the  **Deploy your models to the AI Platform**  section in the note
 ```
 !gcloud ai-platform versions create $VERSION_NAME \
 --model=$MODEL_NAME \
---framework='TensorFlow' \
+--framework='TENSORFLOW' \
 --runtime-version=2.1 \
 --origin=$MODEL_BUCKET/saved_model/my_model \
 --staging-bucket=$MODEL_BUCKET \
---python-version=3.7 \
---project=$GCP_PROJECT
-```
+--python-version=3.7
 
-# ![img6f](./Assets/img6f.png)
+```
 
 Created your first AI Platform model: complete_model  
 (With parameters --runtime-version=2.1, --python-version=3.7)
@@ -104,12 +162,11 @@ Created your first AI Platform model: complete_model
 ```
 !gcloud ai-platform versions create $VERSION_NAME \
 --model=$LIM_MODEL_NAME \
---framework='TensorFlow' \
+--framework='TENSORFLOW' \
 --runtime-version=2.1 \
 --origin=$MODEL_BUCKET/saved_limited_model/my_limited_model \
 --staging-bucket=$MODEL_BUCKET \
---python-version=3.7 \
---project=$GCP_PROJECT
+--python-version=3.7
 ```
     
 **Remark:** The gcloud ai-platform command group should be  `versions`  rather than  `version`.
@@ -136,8 +193,6 @@ Unfortunately, it still doesn’t work if you just change the runtime version fr
 
 ##### Create your second AI Platform model: limited_model  
 (Fixed with --runtime-version=1.14, --python-version=3.5)
-
-# ![img6j](./Assets/img6j.png)
 
 ## Use the What-If Tool to explore biases
 
