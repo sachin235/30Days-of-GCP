@@ -14,24 +14,7 @@ There are a lot of things in store for you.
 
 2. And on top of these amazing badges, get a chance to **win some really cool Google Cloud goodies**. 💪 [(See Prize Rules section)](https://events.withgoogle.com/30daysofgooglecloud/prize-rules/)
 
-### Timeline
 
-<table>
-<thead>
-  <tr>
-    <th>
-      Year: 2021
-    </th>
-  </tr>
-<thead>
-<tbody>
-  <tr>
-    <td>
-      <ul><li> Registrations Closed</li><li> They record your progress on a daily basis and will evaluate it at the end of the program i.e. 27th October 2021 11:59 PM IST.</li><li>You will receive more information on how to avail your Google Cloud goodies after the program ends(typically after 1 month. i.e 27th Sept 2021 11:59 PM IST) ONLY if you are eligible for prizes.</li></ul> |
-    </td>
-  </tr>
-</tbody>
-</table>
 
 ### Tracks/Program's Syllabus
 
