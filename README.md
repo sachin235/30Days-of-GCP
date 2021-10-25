@@ -1,20 +1,10 @@
 # 30Days-of-GCP
 
-<img src="./logo-google-cloud-large.png" width="200">
+[Website](<(https://events.withgoogle.com/30daysofgooglecloud/)>) 
 
-[30 Days of Google Cloud program](<(https://events.withgoogle.com/30daysofgooglecloud/)>) will provide you an opportunity to kickstart your career in cloud and get hands-on practice on Google Cloud Platform - the tool that powers apps like Google Search, Gmail and YouTube.
+GCP will provide you an opportunity to kickstart your career in cloud and get hands-on practice on Google Cloud Platform - the tool that powers apps like Google Search, Gmail and YouTube.
 
 Along the way, you will learn & practice concepts like computing, application development, big data & machine learning using cloud & if you get stuck, you will have your "Campus Facilitators" who are specially trained on Google Cloud to help. 😎
-
-### Why should I enrol in the program?
-
-There are a lot of things in store for you.
-
-1. You can showcase what you've learned here to your professional network **using Google Cloud-hosted quest & skill badges** that you can add to your resume and professional profiles like LinkedIn. 🏆
-
-2. And on top of these amazing badges, get a chance to **win some really cool Google Cloud goodies**. 💪 [(See Prize Rules section)](https://events.withgoogle.com/30daysofgooglecloud/prize-rules/)
-
-
 
 ### Tracks/Program's Syllabus
 
