@@ -1,10 +1,11 @@
 
-The [30Days-of-GCP](https://events.withgoogle.com/30daysofgooglecloud/) program...
+The [30Days-of-GCP](https://events.withgoogle.com/30daysofgooglecloud/) program will provide you an opportunity to kickstart your career in cloud and get hands-on practice on Google Cloud Platform - the tool that powers apps like Google Search, Gmail and YouTube.
  
 
 ### What we have covered in this repository ?
 
 _Short answer_: All Challenge Labs easy to follow foot-steps that will go with you to get 100/100 in all Challenge Labs. 💯% Success with us!
+This is only meant for reference and learning purpose.
 
 <ol>
 
